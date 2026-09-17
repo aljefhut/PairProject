@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "email": "admin@mail.com",
+    "password": "$2a$10$aagufahfoh$2jajkAjfbajoBBcokajfaiopMjfdqbu94$abajhfs%$qA",
+    "role": "Admin",
+    "createdAt": "2026-09-17T00:00:00.000Z",
+    "updatedAt": "2026-09-17T00:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "email": "customer1@mail.com",
+    "password": "$2a$10$abcajhfajajknnn#fajkbfh#auiaEhuihPdfAfuqibPld12$0A1o@aji1",
+    "role": "Customer",
+    "createdAt": "2026-09-17T00:00:00.000Z",
+    "updatedAt": "2026-09-17T00:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "email": "customer2@mail.com",
+    "password": "$2b$10$zEkWscI9ZLft34pnf37QpOiXZQKEitnY695eEGCsyLfQCbh5utx0y",
+    "role": "Customer",
+    "createdAt": "2026-09-17T00:00:00.000Z",
+    "updatedAt": "2026-09-17T00:00:00.000Z"
+  }
+]

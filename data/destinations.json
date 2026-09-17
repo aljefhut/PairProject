@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "name": "Taman Mini Indah Indonesia",
+    "description": "Pantai dengan pemandangan matahari terbenam yang memukau.",
+    "location": "Jakarta Timur",
+    "price": 30000,
+    "imageUrl": "https://tamanmini.com/taman_jelajah_indonesia/wp-content/uploads/2023/07/Museum-Indonesia-TMII-Jakarta.jpg",
+    "CategoryId": 1,
+    "createdAt": "2026-09-17T00:00:00.000Z",
+    "updatedAt": "2026-09-17T00:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "name": "Gunung Bromo",
+    "description": "Pesona kawah vulkanik dan pemandangan sunrise lautan pasir.",
+    "location": "Jawa Timur",
+    "price": 75000,
+    "imageUrl": "https://dte.telkomuniversity.ac.id/wp-content/uploads/2025/06/7f301e6f6c1d724b7ad0220aa00af268.jpeg",
+    "CategoryId": 2,
+    "createdAt": "2026-09-17T00:00:00.000Z",
+    "updatedAt": "2026-09-17T00:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "name": "Candi Borobudur",
+    "description": "Candi Buddha terbesar peninggalan sejarah abad ke-9.",
+    "location": "Magelang",
+    "price": 120000,
+    "imageUrl": "https://www.indonesia.travel/contentassets/ea5919f254c2494c9579fa4ce3522bcb/candi-borobudur-1.jpeg",
+    "CategoryId": 3,
+    "createdAt": "2026-09-17T00:00:00.000Z",
+    "updatedAt": "2026-09-17T00:00:00.000Z"
+  }
+]

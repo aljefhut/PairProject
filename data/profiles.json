@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "fullName": "Budi Santoso",
+    "phone": "081234567890",
+    "address": "Jl. Sudirman No. 12, Jakarta",
+    "UserId": 1,
+    "createdAt": "2026-09-17T00:00:00.000Z",
+    "updatedAt": "2026-09-17T00:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "fullName": "Siti Rahma",
+    "phone": "082198765432",
+    "address": "Jl. Malioboro No. 45, Yogyakarta",
+    "UserId": 2,
+    "createdAt": "2026-09-17T00:00:00.000Z",
+    "updatedAt": "2026-09-17T00:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "fullName": "Andi Pratama",
+    "phone": "085712344321",
+    "address": "Jl. Diponegoro No. 8, Bandung",
+    "UserId": 3,
+    "createdAt": "2026-09-17T00:00:00.000Z",
+    "updatedAt": "2026-09-17T00:00:00.000Z"
+  }
+]

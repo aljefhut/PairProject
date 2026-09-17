@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Katalog Destinasi - Tripnesia</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="/">Tripnesia</a>
+      <div>
+        <a href="/bookings" class="btn btn-outline-light me-2">Tiket Saya</a>
+        <a href="/logout" class="btn btn-danger">Logout (<%= user.role %>)</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-4">
+    <% if (deletedNotice) { %>
+      <div class="alert alert-warning alert-dismissible fade show">
+        Destinasi <strong><%= deletedNotice %></strong> berhasil dihapus!
+      </div>
+    <% } %>
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2>Daftar Destinasi Wisata</h2>
+      <% if (user.role === 'Admin') { %>
+        <a href="/destinations/add" class="btn btn-primary">+ Tambah Destinasi</a>
+      <% } %>
+    </div>
+
+    <!-- Fitur Search & Sort -->
+    <form action="/destinations" method="GET" class="row g-2 mb-4">
+      <div class="col-md-6">
+        <input type="text" name="search" class="form-control" placeholder="Cari tempat wisata...">
+      </div>
+      <div class="col-md-4">
+        <select name="sortBy" class="form-select">
+          <option value="">Urutkan Berdasarkan...</option>
+          <option value="name">Nama (A-Z)</option>
+          <option value="price">Harga (Termurah)</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-secondary w-100">Filter</button>
+      </div>
+    </form>
+
+    <div class="row">
+      <% destinations.forEach(dest => { %>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <img src="<%= dest.imageUrl || 'https://via.placeholder.com/300x200' %>" class="card-img-top" alt="<%= dest.name %>" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <!-- Eager Loading Category Name -->
+              <span class="badge bg-info text-dark mb-2"><%= dest.Category ? dest.Category.name : 'Umum' %></span>
+              <h5 class="card-title"><%= dest.name %></h5>
+              <p class="card-text text-muted mb-1">📍 <%= dest.location %></p>
+              <p class="card-text small"><%= dest.description %></p>
+              <h6 class="text-success fw-bold"><%= formatRupiah(dest.price) %></h6>
+            </div>
+            <div class="card-footer bg-white d-flex justify-content-between">
+              <!-- Form Booking -->
+              <form action="/bookings" method="POST" class="d-flex gap-1 w-100">
+                <input type="hidden" name="DestinationId" value="<%= dest.id %>">
+                <input type="date" name="bookingDate" class="form-control form-control-sm" required>
+                <input type="number" name="totalTicket" value="1" min="1" class="form-control form-control-sm" style="width: 60px;">
+                <button type="submit" class="btn btn-sm btn-success">Pesan</button>
+              </form>
+              <% if (user.role === 'Admin') { %>
+                <a href="/destinations/delete/<%= dest.id %>" class="btn btn-sm btn-outline-danger ms-2" onclick="return confirm('Hapus destinasi ini?')">Hapus</a>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</body>
+</html>
