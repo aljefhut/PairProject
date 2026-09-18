@@ -4,15 +4,7 @@ html, body {
   padding: 0;
 }
 
-.section-top {
-  position: relative;
-  height: 50vh;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 
 .section-video {
   position: absolute;
@@ -46,8 +38,17 @@ html, body {
 }
 
 .section-bottom {
-  min-height: 50vh;
+  min-height: 43.8vh;
   width: 100%;
   background-color: #0f172a;
 }
 
+.section-top {
+  position: relative;
+  height: 50vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
