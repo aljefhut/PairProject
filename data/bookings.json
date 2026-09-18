@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "UserId": 2,
+    "DestinationId": 1,
+    "bookingDate": "2026-10-01",
+    "totalTicket": 2,
+    "totalPrice": 100000,
+    "status": "Success",
+    "createdAt": "2026-09-17T00:00:00.000Z",
+    "updatedAt": "2026-09-17T00:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "UserId": 2,
+    "DestinationId": 2,
+    "bookingDate": "2026-10-05",
+    "totalTicket": 1,
+    "totalPrice": 250000,
+    "status": "Success",
+    "createdAt": "2026-09-17T00:00:00.000Z",
+    "updatedAt": "2026-09-17T00:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "UserId": 3,
+    "DestinationId": 3,
+    "bookingDate": "2026-10-10",
+    "totalTicket": 4,
+    "totalPrice": 300000,
+    "status": "Success",
+    "createdAt": "2026-09-17T00:00:00.000Z",
+    "updatedAt": "2026-09-17T00:00:00.000Z"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Wisata Bahari",
+    "createdAt": "2026-09-17T00:00:00.000Z",
+    "updatedAt": "2026-09-17T00:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "name": "Wisata Alam & Pegunungan",
+    "createdAt": "2026-09-17T00:00:00.000Z",
+    "updatedAt": "2026-09-17T00:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "name": "Wisata Budaya & Sejarah",
+    "createdAt": "2026-09-17T00:00:00.000Z",
+    "updatedAt": "2026-09-17T00:00:00.000Z"
+  }
+]

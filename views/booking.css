@@ -1,0 +1,42 @@
+.page-top {
+  background-color: floralwhite;
+  width: 100%;
+}
+
+.page-bottom {
+  background-color: #0f172a;
+  width: 100%;
+  min-height: 50vh;
+}
+
+.page-bottom-content {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.page-bottom-title {
+  font-family: 'Playfair Display', serif;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.page-bottom-text {
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+}
+
+.page-bottom-btn {
+  background-color: #15803d;
+  border-color: #15803d;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.65rem 2rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.page-bottom-btn:hover {
+  background-color: #166534;
+  color: #ffffff;
+}
