@@ -15,7 +15,7 @@ class Controller {
     }
   }
 
-
+  // Auth: Register Form
   static async registerForm(req, res) {
     try {
       const { errors } = req.query;
@@ -25,7 +25,7 @@ class Controller {
     }
   }
 
-
+  // Auth: Post Register
   static async postRegister(req, res) {
     try {
       const { email, password, role, fullName, phone, address } = req.body;
@@ -41,7 +41,7 @@ class Controller {
     }
   }
 
-
+  // Auth: Login Form
   static async loginForm(req, res) {
     try {
       const { error } = req.query;
@@ -51,7 +51,7 @@ class Controller {
     }
   }
 
-
+  // Auth: Post Login
   static async postLogin(req, res) {
     try {
       const { email, password } = req.body;
@@ -66,6 +66,7 @@ class Controller {
     }
   }
 
+  // Auth: Logout
   static async logout(req, res) {
     req.session.destroy(err => {
       if (err) return res.send(err.message);
@@ -73,12 +74,12 @@ class Controller {
     });
   }
 
-
+  // Destination List (Eager Loading + Search + Sort)
   static async destinationList(req, res) {
     try {
       const { search, sortBy, deleted } = req.query;
       let options = {
-        include: Category,
+        include: Category, // Eager Loading Requirement
         where: {}
       };
 
@@ -93,7 +94,6 @@ class Controller {
       }
 
       const destinations = await Destination.findAll(options);
-      console.log('Jumlah destinasi:', destinations.length);
       res.render('destination', { 
         destinations, 
         user: req.session.user, 
@@ -105,7 +105,7 @@ class Controller {
     }
   }
 
-
+  // Add Destination Form
   static async addDestinationForm(req, res) {
     try {
       const { errors } = req.query;
@@ -119,6 +119,7 @@ class Controller {
     }
   }
 
+  // Post Add Destination
   static async postAddDestination(req, res) {
     try {
       const { name, description, location, price, imageUrl, CategoryId } = req.body;
@@ -133,6 +134,7 @@ class Controller {
     }
   }
 
+  // Delete Destination (Promise Chaining Requirement)
   static deleteDestination(req, res) {
     const { id } = req.params;
     let deletedName = '';
@@ -150,6 +152,7 @@ class Controller {
       });
   }
 
+  // Bookings List & MVP QR Code Generation
   static async bookingList(req, res) {
     try {
       const bookings = await Booking.findAll({
@@ -157,7 +160,7 @@ class Controller {
         include: [Destination, User]
       });
 
- 
+      // Fitur MVP: QR Code Generation
       const bookingsWithQR = await Promise.all(bookings.map(async (b) => {
         const qrData = `BOOKING-ID:${b.id}|USER:${b.User.email}|DEST:${b.Destination.name}|TICKETS:${b.totalTicket}`;
         const qrCodeUrl = await QRCode.toDataURL(qrData);
@@ -170,6 +173,7 @@ class Controller {
     }
   }
 
+  // Post Create Booking
   static async createBooking(req, res) {
     try {
       const { DestinationId, totalTicket, bookingDate } = req.body;
@@ -188,12 +192,12 @@ class Controller {
       const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: 'tripnesiaori@gmail.com',
-          pass: 'txgwtrhrytaxumvr'     
+          user: 'tripnesiaori@gmail.com', // Email Gmail pengirim
+          pass: 'txgwtrhrytaxumvr'     // 16 digit App Password Google
         }
       });
       console.log("Mengirim email ke:", req.session.user.email);
-
+      // 2. Kirim Email Konfirmasi
       await transporter.sendMail({
         from: '"Tripnesia Support" <no-reply@tripnesia.com>',
         to: req.session.user.email,
@@ -215,7 +219,6 @@ class Controller {
       res.send(err.message);
     }
   }
-  
 }
 
 module.exports = Controller;
